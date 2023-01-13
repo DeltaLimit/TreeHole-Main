@@ -11,14 +11,14 @@ func init() {
 }
 
 func main() {
-	r := gin.Default()
+	router := gin.Default()
 
-	r.GET("/", func(c *gin.Context) {
+	router.GET("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"urIP": c.ClientIP(),
 		})
 	})
-	err := r.Run()
+	err := router.Run()
 	HandleError(err)
 }
 
