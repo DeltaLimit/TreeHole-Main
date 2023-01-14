@@ -1,16 +1,16 @@
 package main
 
 import (
-	router2 "TreeHole-Main/router"
+	"TreeHole-Main/router"
 	"github.com/gin-gonic/gin"
 	"log"
 )
 
 func main() {
-	router := gin.Default()
+	r := gin.Default()
 	gin.SetMode(gin.ReleaseMode)
-	router2.InitRouter(router)
-	err := router.Run()
+	router.InitRouter(r)
+	err := r.Run()
 	HandleError(err)
 }
 
